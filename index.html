@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <style>
+    body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  border: 20px solid #f8c8dc;
+  border-radius: 30px;
+  box-shadow: 0 0 40px rgba(255, 182, 193, 0.3);
+  pointer-events: none;
+  z-index: 999;
+}
+
+body {
+  margin: 0;
+  background-color: #f0acc8;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  margin: 0;
+  height: 100vh;
+  font-family: 'Indie Flower', cursive;
+}
+
+.float-item {
+  position: fixed;
+  font-size: 28px;
+  pointer-events: none;
+  z-index: 9999;
+  animation: floatUpDown 6s ease-in-out infinite;
+}
+
+.flower    { top: 10%; left: 5%; }
+.heart     { bottom: 15%; right: 10%; }
+.sparkle   { top: 50%; left: 80%; }
+.star      { top: 20%; right: 5%; }
+.music     { bottom: 30%; left: 15%; }
+.kiss      { top: 70%; right: 20%; }
+.gift      { bottom: 10%; left: 40%; }
+.rainbow   { bottom: 50%; right: 70%; }
+.butterfly { bottom: 50%; right: 30%; }
+.pagar     { bottom: 60%; right: 90%; }
+.panah     { bottom: 10%; right: 90%; }
+
+
+@keyframes floatUpDown {
+  0% { transform: translateY(0); opacity: 0.8; }
+  50% { transform: translateY(-15px); opacity: 1; }
+  100% { transform: translateY(0); opacity: 0.8; }
+}
+
+.content {
+  color: #530417;
+}
+
+@keyframes slowFloat {
+  0% {
+    transform: translateY(0);
+    color: #ff69b4;
+  }
+  50% {
+    transform: translateY(-10px);
+    color: #ffa500;
+  }
+  100% {
+    transform: translateY(0);
+    color: #ff69b4;
+  }
+}
+
+.dekorasi {
+  animation: slowFloat 4s ease-in-out infinite;
+  font-size: 32px;
+  position: fixed;
+  font-size: 32px;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.stiker {
+  font-size: 24px;
+  margin-top: 10px;
+  animation: pelanMuncul 2s ease-in-out;
+}
+
+@keyframes pelanMuncul {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.book {
+  position: relative;
+  width: 500px;
+  height: 320px;
+  margin: 20px;
+  perspective: 2000px;
+  box-shadow: 0 10px 30px rgba(192, 33, 33, 0.2);
+  border-radius: 10px;
+  border: 10px solid #f8c8dc;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(255, 182, 193, 0.5);
+}
+
+.paper {
+  background-image: url('paper-texture.png');
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s ease;
+  transform-origin: left;
+  background-color: #fc89c3;
+  transition: transform 1s ease, box-shadow 0.5s ease;
+}
+
+.paper:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 30px rgba(255, 182, 193, 0.5);
+}
+
+.paper.flipped {
+  transform: rotateY(-180deg);
+  box-shadow: none;
+}
+
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #fc89c3;
+  border: 2px dashed #f8c8dc;
+  box-sizing: border-box;
+  padding: 40px;
+  backface-visibility: hidden;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+.content {
+  text-align: center;
+}
+
+.foto {
+  width: 35%;
+  max-width: 300px;
+  border: 5px dashed #ffb6c1;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  object-fit: cover;
+}
+
+.photo {
+  width: 50%;
+  height: 60%;
+  max-width: 300px;
+  border: 5px dashed #ffb6c1;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  object-fit: cover;
+}
+
+#p1 { z-index: 600; }
+#p2 { z-index: 500; }
+#p3 { z-index: 400; }
+#p4 { z-index: 300; }
+#p5 { z-index: 200; }
+#p6 { z-index: 100; }
+
+.paper:not(.flipped) {
+  pointer-events: none;
+}
+
+  </style>
+  <meta charset="UTF-8">
+  <title>The Book For Rashiell</title>
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="float-item flower">🌸</div>
+<div class="float-item heart">💖</div>
+<div class="float-item sparkle">✨</div>
+<div class="float-item star">⭐</div>
+<div class="float-item music">🎵</div>
+<div class="float-item kiss">💟</div>
+<div class="float-item gift">🎁</div>
+<div class="float-item rainbow">🌈</div>
+<div class="float-item butterfly">🦋</div>
+<div class="float-item pagar">💢</div>
+<div class="float-item panah">💘</div>
+
+
+  <div class="book">
+  <div class="paper" id="p1" onclick="flipPage(this)">
+    <div class="front">
+      <div class="content">
+        <div class="stiker">💖💞💕</div>
+        <h1>Hallo Rashiell, ini untuk kamu</h1>
+        <p>(Klik untuk membuka)</p>
+        <h2>Huamia Rashiell</h2>
+      </div>
+    </div>
+    <div class="back">
+      <div class="content">
+        <h1>Cinta katakan cinta</h1>
+        <div class="stiker">💖💕</div>
+        <img src="WhatsApp Image 2025-11-09 at 17.21.13.jpeg" class="photo">
+      </div>
+    </div>
+  </div>
+
+  <div class="paper" id="p2" onclick="flipPage(this)">
+    <div class="front">
+      <div class="content">
+        <img src="photo_6095911512477207489_x.jpg" class="foto">
+        <h1>Huamia Rashiell</h1>
+      </div>
+    </div>
+    <div class="back">
+      <div class="content">
+        <h1>Hati ini meminta</h1>
+        <div class="stiker">💖💕</div>
+        <img src="WhatsApp Image 2025-11-09 at 17.21.13.jpeg" class="photo">
+      </div>
+    </div>
+  </div>
+
+  <div class="paper" id="p3" onclick="flipPage(this)">
+    <div class="front">
+      <div class="content">
+        <img src="photo_6095911512477207490_x.jpg" class="foto">
+        <h1>Huamia Rashiell</h1>
+      </div>
+    </div>
+    <div class="back">
+      <div class="content">
+        <h2>Kau lebih dari teman berbagi</h2>
+        <div class="stiker">💖💕</div>
+        <img src="WhatsApp Image 2025-11-09 at 17.21.13.jpeg" class="photo">
+      </div>
+    </div>
+  </div>
+
+  <div class="paper" id="p4" onclick="flipPage(this)">
+    <div class="front">
+      <div class="content">
+        <img src="photo_6095911512477207491_x.jpg" class="foto">
+        <h1>Huamia Rashiell</h1>
+      </div>
+    </div>
+    <div class="back">
+      <div class="content">
+        <h1>Jadi kekasih ku saja</h1>
+        <div class="stiker">💖💕</div>
+        <img src="WhatsApp Image 2025-11-09 at 17.21.13.jpeg" class="photo">
+      </div>
+    </div>
+  </div>
+
+  <div class="paper" id="p5" onclick="flipPage(this)">
+    <div class="front">
+      <div class="content">
+        <img src="photo_6095911512477207492_x.jpg" class="foto">
+        <h1>Huamia Rashiell</h1>
+      </div>
+    </div>
+    <div class="back">
+      <div class="content">
+        <h2>For Huamia Rashiell</h2>
+        <div class="stiker">💖💕</div>
+        <img src="photo_6095911512477207493_x.jpg" class="foto">
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  let current = 0;
+const pages = document.querySelectorAll('.paper');
+const total = pages.length;
+let forward = true;
+
+function nextPage() {
+  if (forward) {
+    if (current < total) {
+      pages[current].classList.add('flipped');
+      pages[current].style.zIndex = 1000 + current;
+      current++;
+    } else {
+      forward = false; 
+      current--;
+    }
+  } else {
+    if (current >= 0) {
+      pages[current].classList.remove('flipped');
+      pages[current].style.zIndex = 1000 - current;
+      current--;
+    } else {
+      forward = true;
+      current++;
+    }
+  }
+}
+
+document.querySelector('.book').addEventListener('click', nextPage);
+
+</script>
+</body>
+</html>
